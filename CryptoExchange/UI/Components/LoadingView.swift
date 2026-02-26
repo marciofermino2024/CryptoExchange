@@ -1,4 +1,9 @@
-// NOVA
+//  Untitled.swift
+//  CryptoExchange
+//
+//  Created by Marcio on 26/02/26.
+//
+
 import SwiftUI
 
 struct LoadingView: View {
@@ -14,3 +19,23 @@ struct LoadingView: View {
         .accessibilityIdentifier("loading_view")
     }
 }
+
+#if DEBUG
+
+#Preview("LoadingView · Light") {
+    LoadingView()
+        .preferredColorScheme(.light)
+        .environment(\.locale, Locale(identifier: "pt_BR"))
+}
+
+#Preview("LoadingView · Dark") {
+    LoadingView()
+        .preferredColorScheme(.dark)
+}
+
+#Preview("LoadingView · A11y") {
+    LoadingView()
+        .dynamicTypeSize(.accessibility3)
+}
+
+#endif

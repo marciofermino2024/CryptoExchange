@@ -1,4 +1,9 @@
-// NOVA
+//  Untitled.swift
+//  CryptoExchange
+//
+//  Created by Marcio on 26/02/26.
+//
+
 import Foundation
 
 /// MockURLProtocol intercepts URLSession requests in tests — no real network calls.

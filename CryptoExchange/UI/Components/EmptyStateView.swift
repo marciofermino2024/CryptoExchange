@@ -1,4 +1,9 @@
-// NOVA
+//  Untitled.swift
+//  CryptoExchange
+//
+//  Created by Marcio on 26/02/26.
+//
+
 import SwiftUI
 
 struct EmptyStateView: View {
@@ -20,3 +25,23 @@ struct EmptyStateView: View {
         .accessibilityIdentifier("empty_view")
     }
 }
+
+#if DEBUG
+
+#Preview("EmptyStateView · Light") {
+    EmptyStateView()
+        .preferredColorScheme(.light)
+        .environment(\.locale, Locale(identifier: "pt_BR"))
+}
+
+#Preview("EmptyStateView · Dark") {
+    EmptyStateView()
+        .preferredColorScheme(.dark)
+}
+
+#Preview("EmptyStateView · A11y") {
+    EmptyStateView()
+        .dynamicTypeSize(.accessibility3)
+}
+
+#endif
