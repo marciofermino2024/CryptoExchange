@@ -1,8 +1,9 @@
-//  ImageLoader.swift
+//  Untitled.swift
 //  CryptoExchange
 //
 //  Created by Marcio on 26/02/26.
 //
+
 import SwiftUI
 import Foundation
 
@@ -179,6 +180,10 @@ struct CachedLogoView: View {
 
     @State private var state: ImageLoadState = .idle
 
+    private var isRunningForPreviews: Bool {
+        ProcessInfo.processInfo.environment["XCODE_RUNNING_FOR_PREVIEWS"] == "1"
+    }
+
     var body: some View {
         Group {
             switch state {
@@ -202,6 +207,11 @@ struct CachedLogoView: View {
         .background(Color(.systemGray6))
         .clipShape(RoundedRectangle(cornerRadius: size * 0.167))
         .task(id: url?.absoluteString) {
+            if isRunningForPreviews {
+                // Keep previews offline and deterministic.
+                state = .success(Image(systemName: "building.2"))
+                return
+            }
             guard let urlString = url?.absoluteString else {
                 state = .failure("No URL")
                 return
@@ -211,3 +221,26 @@ struct CachedLogoView: View {
         }
     }
 }
+
+#if DEBUG
+
+#Preview("CachedLogoView · Light") {
+    CachedLogoView(url: PreviewFixtures.sampleLogoURL, size: 56)
+        .padding()
+        .preferredColorScheme(.light)
+        .environment(\.locale, Locale(identifier: "pt_BR"))
+}
+
+#Preview("CachedLogoView · Dark") {
+    CachedLogoView(url: PreviewFixtures.sampleLogoURL, size: 56)
+        .padding()
+        .preferredColorScheme(.dark)
+}
+
+#Preview("CachedLogoView · A11y") {
+    CachedLogoView(url: PreviewFixtures.sampleLogoURL, size: 56)
+        .padding()
+        .dynamicTypeSize(.accessibility3)
+}
+
+#endif

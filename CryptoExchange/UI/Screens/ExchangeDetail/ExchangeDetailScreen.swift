@@ -1,4 +1,9 @@
-// NOVA
+//  Untitled.swift
+//  CryptoExchange
+//
+//  Created by Marcio on 26/02/26.
+//
+
 import SwiftUI
 
 struct ExchangeDetailScreen: View {
@@ -186,3 +191,49 @@ struct ExchangeDetailScreen: View {
         }
     }
 }
+
+#if DEBUG
+
+private struct ExchangeDetailScreenPreviewHost: View {
+    let detailMode: MockGetExchangeDetailUseCase.Mode
+    let pairsMode: MockGetExchangeMarketPairsUseCase.Mode
+
+    var body: some View {
+        NavigationStack {
+            ExchangeDetailScreen(
+                viewModel: ExchangeDetailViewModel(
+                    exchangeID: PreviewFixtures.exchange.id,
+                    getExchangeDetailUseCase: MockGetExchangeDetailUseCase(mode: detailMode),
+                    getExchangeMarketPairsUseCase: MockGetExchangeMarketPairsUseCase(mode: pairsMode)
+                )
+            )
+        }
+    }
+}
+
+#Preview("ExchangeDetailScreen · Light") {
+    ExchangeDetailScreenPreviewHost(
+        detailMode: .success(PreviewFixtures.exchange),
+        pairsMode: .success(PreviewFixtures.marketPairs)
+    )
+    .preferredColorScheme(.light)
+    .environment(\.locale, Locale(identifier: "pt_BR"))
+}
+
+#Preview("ExchangeDetailScreen · Dark") {
+    ExchangeDetailScreenPreviewHost(
+        detailMode: .success(PreviewFixtures.exchange),
+        pairsMode: .success(PreviewFixtures.marketPairs)
+    )
+    .preferredColorScheme(.dark)
+}
+
+#Preview("ExchangeDetailScreen · A11y") {
+    ExchangeDetailScreenPreviewHost(
+        detailMode: .success(PreviewFixtures.exchange),
+        pairsMode: .success(PreviewFixtures.marketPairs)
+    )
+    .dynamicTypeSize(.accessibility3)
+}
+
+#endif

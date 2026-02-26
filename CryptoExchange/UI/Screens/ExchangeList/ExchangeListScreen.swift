@@ -1,8 +1,9 @@
-//  ExchangeListScreen.swift
+//  Untitled.swift
 //  CryptoExchange
 //
 //  Created by Marcio on 26/02/26.
 //
+
 import SwiftUI
 
 struct ExchangeListScreen: View {
@@ -55,13 +56,15 @@ struct ExchangeListScreen: View {
     private func listView(exchanges: [Exchange]) -> some View {
         List {
             ForEach(exchanges) { exchange in
-                NavigationLink(destination: ExchangeDetailScreen(
-                    viewModel: ExchangeDetailViewModel(
-                        exchangeID: exchange.id,
-                        getExchangeDetailUseCase: DependencyContainer.shared.getExchangeDetailUseCase,
-                        getExchangeMarketPairsUseCase: DependencyContainer.shared.getExchangeMarketPairsUseCase
+                NavigationLink {
+                    ExchangeDetailScreen(
+                        viewModel: ExchangeDetailViewModel(
+                            exchangeID: exchange.id,
+                            getExchangeDetailUseCase: DependencyContainer.shared.getExchangeDetailUseCase,
+                            getExchangeMarketPairsUseCase: DependencyContainer.shared.getExchangeMarketPairsUseCase
+                        )
                     )
-                )) {
+                } label: {
                     ExchangeRowView(exchange: exchange)
                 }
                 .onAppear {
@@ -83,6 +86,43 @@ struct ExchangeListScreen: View {
         .accessibilityIdentifier("exchange_list")
     }
 }
+
+#if DEBUG
+
+private struct ExchangeListScreenPreviewHost: View {
+    let mode: MockGetExchangeListUseCase.Mode
+
+    var body: some View {
+        ExchangeListScreen(
+            viewModel: ExchangeListViewModel(
+                getExchangeListUseCase: MockGetExchangeListUseCase(mode: mode)
+            )
+        )
+    }
+}
+
+#Preview("ExchangeListScreen · Light") {
+    ExchangeListScreenPreviewHost(mode: .success(PreviewFixtures.exchanges))
+        .preferredColorScheme(.light)
+        .environment(\.locale, Locale(identifier: "pt_BR"))
+}
+
+#Preview("ExchangeListScreen · Dark") {
+    ExchangeListScreenPreviewHost(mode: .success(PreviewFixtures.exchanges))
+        .preferredColorScheme(.dark)
+}
+
+#Preview("ExchangeListScreen · A11y") {
+    ExchangeListScreenPreviewHost(mode: .success(PreviewFixtures.exchanges))
+        .dynamicTypeSize(.accessibility3)
+}
+
+#Preview("ImageDebugSheetView · Light") {
+    ImageDebugSheetView()
+        .preferredColorScheme(.light)
+}
+
+#endif
 
 // MARK: - Image Debug Sheet (DEBUG only)
 

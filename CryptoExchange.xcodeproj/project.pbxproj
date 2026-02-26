@@ -51,6 +51,7 @@
 		A031 /* CMCLogger.swift in Sources */ = {isa = PBXBuildFile; fileRef = F032; };
 		A032 /* ErrorContext.swift in Sources */ = {isa = PBXBuildFile; fileRef = F033; };
 		A033 /* ImageLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = F034; };
+		A034 /* PreviewFixtures.swift in Sources */ = {isa = PBXBuildFile; fileRef = F035; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -88,6 +89,7 @@
 		F032 = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CMCLogger.swift; path = CryptoExchange/Data/Network/CMCLogger.swift; sourceTree = SOURCE_ROOT; };
 		F033 = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ErrorContext.swift; path = CryptoExchange/UI/ViewModels/ErrorContext.swift; sourceTree = SOURCE_ROOT; };
 		F034 = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ImageLoader.swift; path = CryptoExchange/Data/Network/ImageLoader.swift; sourceTree = SOURCE_ROOT; };
+		F035 = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = PreviewFixtures.swift; path = CryptoExchange/PreviewSupport/PreviewFixtures.swift; sourceTree = SOURCE_ROOT; };
 		T001 = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = MockAPIClient.swift; path = CryptoExchangeTests/Mocks/MockAPIClient.swift; sourceTree = SOURCE_ROOT; };
 		T002 = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = MockExchangeRepository.swift; path = CryptoExchangeTests/Mocks/MockExchangeRepository.swift; sourceTree = SOURCE_ROOT; };
 		T003 = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ExchangeUseCaseTests.swift; path = CryptoExchangeTests/UseCases/ExchangeUseCaseTests.swift; sourceTree = SOURCE_ROOT; };
@@ -132,6 +134,7 @@
 			children = (
 				F001,
 				F002,
+				F035,
 				DOMAINGRP,
 				DATAGRP,
 				UIGRP,
@@ -317,7 +320,7 @@
 		SOURCES1 = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
-			files = (A001,A002,A003,A004,A005,A006,A007,A008,A009,A010,A011,A012,A013,A014,A015,A016,A017,A018,A019,A020,A021,A022,A023,A024,A025,A026,A027,A028,A031,A032,A033);
+			files = (A001,A002,A003,A004,A005,A006,A007,A008,A009,A010,A011,A012,A013,A014,A015,A016,A017,A018,A019,A020,A021,A022,A023,A024,A025,A026,A027,A028,A031,A032,A033,A034);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		RESOURCES_TEST = {
