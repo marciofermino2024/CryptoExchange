@@ -1,0 +1,29 @@
+{
+  "status": {
+    "error_code": 0,
+    "error_message": null
+  },
+  "data": {
+    "270": {
+      "id": 270,
+      "name": "Binance",
+      "slug": "binance",
+      "logo": "https://s2.coinmarketcap.com/static/img/exchanges/64x64/270.png",
+      "description": "Binance is the world's largest cryptocurrency exchange.",
+      "date_launched": "2017-07-14T00:00:00.000Z",
+      "notice": null,
+      "spot_volume_usd": 9500000000.0,
+      "maker_fee": 0.001,
+      "taker_fee": 0.001,
+      "weekly_visits": 5000000,
+      "spot": 1000,
+      "urls": {
+        "website": ["https://www.binance.com"],
+        "blog": [],
+        "chat": [],
+        "fee": [],
+        "twitter": ["https://twitter.com/binance"]
+      }
+    }
+  }
+}

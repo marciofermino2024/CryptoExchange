@@ -1,0 +1,37 @@
+/* App - General */
+"loading_message" = "Loading…";
+"retry_button" = "Try Again";
+"not_available" = "N/A";
+
+/* Navigation */
+"nav_title_exchanges" = "Exchanges";
+
+/* Errors */
+"error_title" = "Something went wrong";
+"error_missing_api_key" = "API key is not configured. Please set up your Secrets.xcconfig.";
+"error_network_offline" = "No internet connection. Check your connection and try again.";
+"error_timeout" = "Request timed out. Please try again.";
+"error_http" = "Server returned error %d. Please try again later.";
+"error_decoding" = "Failed to parse server response.";
+"error_unknown" = "An unexpected error occurred.";
+
+/* Empty State */
+"empty_state_title" = "No Exchanges";
+"empty_state_message" = "There are no exchanges to display at this time.";
+
+/* Detail Screen */
+"detail_description" = "Description";
+"detail_visit_website" = "Visit Website";
+"detail_market_pairs" = "Market Pairs";
+"detail_date_launched" = "Date Launched";
+"detail_volume_usd" = "Spot Volume (USD)";
+"detail_maker_fee" = "Maker Fee";
+"detail_taker_fee" = "Taker Fee";
+
+/* Market Pairs */
+"pairs_empty" = "No market pairs available.";
+"volume_24h_label" = "Vol 24h: %@";
+"price_usd_label" = "Price (USD)";
+
+/* Debug */
+"error_debug_details" = "Error Details (Debug)";

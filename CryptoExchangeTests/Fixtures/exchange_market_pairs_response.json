@@ -1,0 +1,45 @@
+{
+  "status": {
+    "error_code": 0,
+    "error_message": null
+  },
+  "data": {
+    "id": 270,
+    "name": "Binance",
+    "num_market_pairs": 2,
+    "market_pairs": [
+      {
+        "rank_id": 1,
+        "market_id": 9933189,
+        "market_pair_base": {
+          "currency_id": 1,
+          "currency_symbol": "BTC",
+          "exchange_symbol": "BTC",
+          "currency_type": "cryptocurrency"
+        },
+        "market_pair_quote": {
+          "currency_id": 825,
+          "currency_symbol": "USDT",
+          "exchange_symbol": "USDT",
+          "currency_type": "cryptocurrency"
+        },
+        "quote": {
+          "exchange_reported": {
+            "price": 43500.0,
+            "volume_24h_base": 12000.0,
+            "volume_24h_quote": 522000000.0,
+            "volume_24h": 522000000.0,
+            "last_updated": "2024-01-01T00:00:00.000Z"
+          },
+          "USD": {
+            "price": 43500.0,
+            "volume_24h_base": 12000.0,
+            "volume_24h_quote": 522000000.0,
+            "volume_24h": 522000000.0,
+            "last_updated": "2024-01-01T00:00:00.000Z"
+          }
+        }
+      }
+    ]
+  }
+}

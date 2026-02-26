@@ -1,0 +1,24 @@
+{
+  "status": {
+    "error_code": 0,
+    "error_message": null
+  },
+  "data": [
+    {
+      "id": 270,
+      "name": "Binance",
+      "slug": "binance",
+      "is_active": 1,
+      "first_historical_data": "2018-04-26T00:45:00.000Z",
+      "last_historical_data": "2024-01-01T00:00:00.000Z"
+    },
+    {
+      "id": 89,
+      "name": "Coinbase Exchange",
+      "slug": "coinbase-exchange",
+      "is_active": 1,
+      "first_historical_data": "2019-01-01T00:00:00.000Z",
+      "last_historical_data": "2024-01-01T00:00:00.000Z"
+    }
+  ]
+}
