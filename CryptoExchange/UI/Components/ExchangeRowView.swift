@@ -1,8 +1,9 @@
-//  ExchangeRowView.swift
+//  Untitled.swift
 //  CryptoExchange
 //
 //  Created by Marcio on 26/02/26.
 //
+
 import SwiftUI
 
 struct ExchangeRowView: View {
@@ -76,3 +77,26 @@ struct ExchangeRowView: View {
         .accessibilityIdentifier("exchange_row_\(exchange.id)")
     }
 }
+
+#if DEBUG
+
+#Preview("ExchangeRowView · Light") {
+    ExchangeRowView(exchange: PreviewFixtures.exchange)
+        .padding()
+        .preferredColorScheme(.light)
+        .environment(\.locale, Locale(identifier: "pt_BR"))
+}
+
+#Preview("ExchangeRowView · Dark") {
+    ExchangeRowView(exchange: PreviewFixtures.exchange)
+        .padding()
+        .preferredColorScheme(.dark)
+}
+
+#Preview("ExchangeRowView · A11y") {
+    ExchangeRowView(exchange: PreviewFixtures.exchange)
+        .padding()
+        .dynamicTypeSize(.accessibility3)
+}
+
+#endif

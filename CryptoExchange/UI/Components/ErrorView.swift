@@ -1,8 +1,9 @@
-//  ErrorView.swift
+//  Untitled.swift
 //  CryptoExchange
 //
 //  Created by Marcio on 26/02/26.
 //
+
 import SwiftUI
 
 struct ErrorView: View {
@@ -128,4 +129,35 @@ struct DebugSheetView: View {
         }
     }
 }
+#endif
+
+#if DEBUG
+
+#Preview("ErrorView · Light") {
+    ErrorView(error: .unknown("Preview error"), onRetry: {})
+        .preferredColorScheme(.light)
+        .environment(\.locale, Locale(identifier: "pt_BR"))
+}
+
+#Preview("ErrorView · Dark") {
+    ErrorView(error: .unknown("Preview error"), onRetry: {})
+        .preferredColorScheme(.dark)
+}
+
+#Preview("ErrorView · A11y") {
+    ErrorView(error: .unknown("Preview error"), onRetry: {})
+        .dynamicTypeSize(.accessibility3)
+}
+
+#Preview("DebugSheetView · Light") {
+    DebugSheetView(context: ErrorContext(
+        requestID: "REQ-123",
+        url: "https://api.example.com/v1/exchanges",
+        statusCode: 500,
+        technicalError: "Internal Server Error",
+        jsonSnippet: "{\n  \"status\": \"error\"\n}"
+    ))
+    .preferredColorScheme(.light)
+}
+
 #endif

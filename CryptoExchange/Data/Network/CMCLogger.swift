@@ -1,8 +1,9 @@
-//  CMCLogger.swift
+//  Untitled.swift
 //  CryptoExchange
 //
 //  Created by Marcio on 26/02/26.
 //
+
 import Foundation
 import os.log
 
