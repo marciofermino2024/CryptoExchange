@@ -8,12 +8,11 @@ import Foundation
 
 enum ExchangeMapper {
     static func map(_ dto: ExchangeInfoDTO) -> Exchange {
-        // ISO8601 with fractional seconds (e.g. "2017-07-14T00:00:00.000Z")
+     
         let date = parseDate(dto.dateLaunched)
         let logo = dto.logo.flatMap { URL(string: $0) }
         let website = dto.urls?.website?.first.flatMap { URL(string: $0) }
 
-        // Log logo presence — proves data flows from API to domain model
         CMCLogger.shared.logLogoURL(
             exchangeId: dto.id,
             name: dto.name,

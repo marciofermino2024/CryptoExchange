@@ -61,10 +61,9 @@ final class APIClient: APIClientProtocol {
             throw err
         }
 
-        // Single shared decoder — use CodingKeys in DTOs (NOT convertFromSnakeCase)
-        // to avoid conflicts when CodingKeys are manually defined
+      
         let decoder = JSONDecoder()
-        // Do NOT use .convertFromSnakeCase — all DTOs use explicit CodingKeys for snake_case fields
+        
         do {
             return try decoder.decode(T.self, from: data)
         } catch {

@@ -6,7 +6,6 @@
 
 import Foundation
 
-// GET /v1/exchange/market-pairs/latest response
 struct ExchangeMarketPairsResponseDTO: Decodable {
     let status: StatusDTO
     let data: ExchangeMarketPairsDataDTO

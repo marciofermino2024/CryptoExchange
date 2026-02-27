@@ -64,7 +64,6 @@ final class MultiIDAPIClient {
             throw err
         }
 
-        // Explicit CodingKeys on all DTOs — do NOT use convertFromSnakeCase
         let decoder = JSONDecoder()
         do {
             return try decoder.decode(ExchangeInfoResponseDTO.self, from: data)

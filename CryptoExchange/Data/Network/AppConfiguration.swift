@@ -17,12 +17,7 @@ enum AppConfiguration {
         else {
             fatalError(
                 """
-                ❌ CoinMarketCap API Key not configured.
-                
-                Please follow the README instructions:
-                1. Copy Secrets.xcconfig.example to Secrets.xcconfig
-                2. Set CMC_API_KEY = your_key_here
-                3. Re-build the project.
+                Erro Key API
                 """
             )
         }

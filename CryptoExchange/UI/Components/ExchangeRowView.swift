@@ -36,11 +36,7 @@ struct ExchangeRowView: View {
 
     var body: some View {
         HStack(spacing: 12) {
-            // Use CachedLogoView instead of AsyncImage:
-            // - NSCache backed, no re-download on scroll
-            // - Concurrency limited to 6 simultaneous
-            // - Per-URL state machine: idle/loading/success/failure
-            // - Logged via CMCLogger [IMG]
+      
             CachedLogoView(url: exchange.logo, size: 48)
 
             VStack(alignment: .leading, spacing: 4) {
