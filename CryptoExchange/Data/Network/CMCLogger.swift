@@ -21,7 +21,7 @@ struct ImageLogEntry {
 
     var summary: String {
         let status = statusCode.map { "\($0)" } ?? "—"
-        let cache = cacheHit ? "✅HIT" : "❌MISS"
+        let cache = cacheHit ? "HIT" : "MISS"
         let ms = String(format: "%.0f", latencyMS)
         let size = bytes.map { "\($0)B" } ?? "—"
         return "[\(cache)] \(status) \(ms)ms \(size) \(url)"
@@ -130,7 +130,7 @@ final class CMCLogger {
         if let url = logoURL, !url.isEmpty {
             imgLogger.debug("[IMG] exchange id=\(exchangeId) name=\(name) logoURL=\(url)")
         } else {
-            imgLogger.warning("[IMG] ⚠️ MISSING LOGO id=\(exchangeId) name=\(name)")
+            imgLogger.warning("[IMG] MISSING LOGO id=\(exchangeId) name=\(name)")
         }
         #endif
     }
